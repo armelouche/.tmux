@@ -55,7 +55,7 @@ Plug 'editorconfig/editorconfig-vim'
 
 " Make vim a first class Go development environment
 " https://github.com/fatih/vim-go
-Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+" Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 
 " vim-misc
 " https://github.com/xolox/vim-misc
@@ -63,22 +63,22 @@ Plug 'xolox/vim-misc'
 
 " vim-easytags
 " https://github.com/xolox/vim-easytags
-Plug 'xolox/vim-easytags'
+" Plug 'xolox/vim-easytags'
 
 " Tagbar
 " https://github.com/majutsushi/tagbar
 Plug 'majutsushi/tagbar'
 
 " https://github.com/nsf/gocode
-Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
+" Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
 
 " deoplete (for gocode completion support)
 " https://github.com/Shougo/deoplete.nvim
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " deoplete-go (for gocode completion support)
 " https://github.com/zchee/deoplete-go
-Plug 'zchee/deoplete-go', { 'do': 'make'}
+" Plug 'zchee/deoplete-go', { 'do': 'make'}
 
 " Markdown support
 " https://github.com/plasticboy/vim-markdown
@@ -166,6 +166,9 @@ set ruler
 
 "disable showmode since using vim-airline; otherwise use 'set showmode'
 set noshowmode
+
+" mouse mode on
+set mouse=a
 
 " file type recognition
 filetype on
@@ -284,6 +287,8 @@ inoremap ;; <Esc>
 "nnoremap <C-Space> :NERDTreeToggle<CR>
 "nmap <C-@> <C-Space>
 nnoremap <silent> <Space> :NERDTreeToggle<CR>
+
+map <leader>r :NERDTreeFind<cr>
 
 " toggle tagbar
 nnoremap <silent> <leader>tb :TagbarToggle<CR>
