@@ -113,6 +113,10 @@ Plug 'Yggdroot/indentLine'
 
 Plug 'christoomey/vim-tmux-navigator'
 
+Plug 'tpope/vim-commentary'
+Plug 'kana/vim-surround'
+Plug 'airblade/vim-gitgutter'
+
 " -------------------------------------
 " Add plugins to &runtimepath
 call plug#end()
@@ -198,6 +202,8 @@ let g:vim_markdown_folding_disabled = 1
 " open new split panes to right and below (as you probably expect)
 set splitright
 set splitbelow
+
+set clipboard+=unnamedplus
 
 " Use Ag (the silver searcher) instack of Ack
 let g:ackprg = 'ag --nogroup --nocolor --column'
@@ -376,7 +382,9 @@ nnoremap <silent> <A-right> :TmuxNavigateRight<cr>
 " nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
 
 " Start terminal in insert mode
-au BufEnter * if &buftype == 'terminal' | :startinsert | endif
+if has('nvim')
+    autocmd TermOpen term://* startinsert
+endif
 nnoremap <silent> <leader>tt :terminal<CR>
 nnoremap <silent> <leader>tv :vnew<CR>:terminal<CR>
 nnoremap <silent> <leader>th :new<CR>:terminal<CR>
